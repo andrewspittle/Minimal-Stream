@@ -1,13 +1,10 @@
 <?php get_header(); ?>
 
 	<div id="content">
-	
-	<h2><a href="/"><?php bloginfo('name'); ?></a> : <b>not found</b></h2>
-<br>
-<br>
-Our search is lonely,<br>
-as futile as this lost page<br>
-Let's <a href="<?php echo get_option('home'); ?>/">go home</a> instead.
+		<h2 class="entry-title"><?php _e( 'Not Found', 'minimalstream' ); ?></h2>
+		
+		<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'twentyten' ); ?></p>
+		<?php get_search_form(); ?>
 	</div>
 
 <?php get_footer(); ?>

@@ -17,10 +17,10 @@
 				
 					<div id="entry-author-info">
 						<div id="author-avatar">
-							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'mnmlist_author_bio_avatar_size', 60 ) ); ?>
+							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'minimalstream_author_bio_avatar_size', 60 ) ); ?>
 						</div><!-- #author-avatar -->
 						<div id="author-description">
-							<h2><?php printf( esc_attr__( 'About %s', 'mnmlist' ), get_the_author() ); ?></h2>
+							<h2><?php printf( esc_attr__( 'About %s', 'minimalstream' ), get_the_author() ); ?></h2>
 							<?php the_author_meta( 'description' ); ?>
 						</div><!-- #author-description -->
 					</div><!-- #entry-author-info -->
@@ -28,8 +28,8 @@
 			</div>
 			
 			<div id="nav-below" class="navigation">
-				<div class="nav-previous"><?php previous_post_link( 'Previously: %link', '<span class="meta-nav">' . _x( '', 'Previous post link', 'mnmlist' ) . '</span> %title' ); ?></div>
-				<div class="nav-next"><?php next_post_link( 'Next: %link', '<span class="meta-nav">' . _x( '', 'Next post link', 'mnmlist' ) . '</span> %title' ); ?></div>
+				<div class="nav-previous"><?php previous_post_link( 'Previously: %link', '<span class="meta-nav">' . _x( '', 'Previous post link', 'minimalstream' ) . '</span> %title' ); ?></div>
+				<div class="nav-next"><?php next_post_link( 'Next: %link', '<span class="meta-nav">' . _x( '', 'Next post link', 'minimalstream' ) . '</span> %title' ); ?></div>
 			</div><!-- #nav-below -->
 			
 		</div>

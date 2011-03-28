@@ -22,7 +22,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'mnmlist' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'minimalstream' ), max( $paged, $page ) );
 
 	?></title>
 

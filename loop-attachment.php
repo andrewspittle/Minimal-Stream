@@ -1,9 +1,9 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<?php if ( ! empty( $post->post_parent ) ) : ?>
-					<p class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'mnmlist' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
+					<p class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'minimalstream' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
 						/* translators: %s - title of parent post */
-						printf( __( '<span class="meta-nav">&larr;</span> %s', 'mnmlist' ), get_the_title( $post->post_parent ) );
+						printf( __( '<span class="meta-nav">&larr;</span> %s', 'minimalstream' ), get_the_title( $post->post_parent ) );
 					?></a></p>
 				<?php endif; ?>
 
@@ -12,7 +12,7 @@
 
 					<div class="entry-meta">
 						<?php
-							printf( __( '<span class="%1$s">Published</span> %2$s', 'mnmlist' ),
+							printf( __( '<span class="%1$s">Published</span> %2$s', 'minimalstream' ),
 								'meta-prep meta-prep-entry-date',
 								sprintf( '<span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span>',
 									esc_attr( get_the_time() ),
@@ -22,10 +22,10 @@
 							if ( wp_attachment_is_image() ) {
 								echo ' <span class="meta-sep">|</span> ';
 								$metadata = wp_get_attachment_metadata();
-								printf( __( 'Full size is %s pixels', 'mnmlist' ),
+								printf( __( 'Full size is %s pixels', 'minimalstream' ),
 									sprintf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
 										wp_get_attachment_url(),
-										esc_attr( __( 'Link to full-size image', 'mnmlist' ) ),
+										esc_attr( __( 'Link to full-size image', 'minimalstream' ) ),
 										$metadata['width'],
 										$metadata['height']
 									)
@@ -57,8 +57,8 @@
 	}
 ?>
 						<p class="attachment"><a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
-							$attachment_width  = apply_filters( 'mnmlist_attachment_size', 540 );
-							$attachment_height = apply_filters( 'mnmlist_attachment_height', 540 );
+							$attachment_width  = apply_filters( 'minimalstream_attachment_size', 540 );
+							$attachment_height = apply_filters( 'minimalstream_attachment_height', 540 );
 							echo wp_get_attachment_image( $post->ID, array( $attachment_width, $attachment_height ) ); // filterable image width with, essentially, no limit for image height.
 						?></a></p>
 
