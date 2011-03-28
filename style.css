@@ -1,0 +1,507 @@
+/*   
+Theme Name: Andrew Spittle
+Theme URI: http://andrewspittle.net/projects
+Description: A very clean minimalist theme.
+Author: Andrew Spittle
+Author URI: http://andrewspittle.net
+.
+This theme is uncopyrighted, free, and offered as is.
+.
+*/
+
+#container {
+	margin: 0 auto;
+	padding-top: 40px;
+	width: 540px;
+}
+
+body {
+	background:#fff;
+	font-family: Georgia, Times, serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	margin:0px;
+}
+
+/* Header Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+h1 {
+	color: #333;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 22px;
+}
+h2 {
+	color: #333;
+	font-size: 1.2em;
+	font-weight: normal;
+	line-height: 20px;
+}
+h3 {
+	color: #000000;
+	font-size: 16px;
+}
+h4 {
+	color: #000000;
+	font-size: 14px;
+}
+h5 {
+	color: #000000;
+	font-size: 12px;
+}
+#site-title {
+	float: left;
+}
+#site-description {
+	color: #666;
+	float: left;
+	line-height: 22px;
+	margin-left: 20px;
+	margin-top: 15px;
+	font-style: italic;
+	font-size: 14px;
+}
+.entry-title {
+	font-weight: bold;
+}
+.author .page-title,
+.archive .page-title,
+.tag .page-title,
+.search .page-title {
+	color: #666;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+img {
+	border:none;
+}
+a img {
+	border:none;
+}
+blockquote {
+	border-left: 1px solid #A5ABAB;
+	margin: 0 0 0 20px;
+	padding: 0 12px 0 12px;
+}
+blockquote p {
+	color: #3d3d3d;
+}
+
+/* Text Styles */
+p {
+	color: #000000;
+	line-height: 1.5em;
+	margin: 12px 0;
+}
+pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+}
+code {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+a {
+	text-decoration: none;
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+a:visited {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #ba2000;
+	text-decoration: none;
+}
+
+ol,
+ul {
+	padding: .5em 0em 0em 3.2em;
+}
+li {
+	line-height: 1.5em;
+	padding: 6px 0 0 0;
+}
+
+/* Content Styles */
+#content {
+	float: right;
+	margin-bottom: 24px;
+	margin-top: 40px;
+	width: 540px;
+}
+#content pre,
+#content kbd,
+#content tt,
+#content var {
+	font-size: 14px;
+	line-height: 21px;
+}
+#content code {
+	font-size: 13px;
+}
+.entry a:link {
+	color: #303030;
+	text-decoration: none;
+	border-width: 0 0 1px 0;
+	border-style: none none solid none;
+	border-color: #C0C0C0;
+}
+.entry a:visited {
+	color: #303030;
+	text-decoration: none;
+	border-width: 0 0 1px 0;
+	border-style: none none solid none;
+	border-color: #C0C0C0;
+}
+.entry a:hover {
+	color: #ba2000;
+	border-width: 0 0 1px 0;
+	border-style: none none solid none;
+	border-color: #C0C0C0;
+	text-decoration: none;
+}
+#container #content .entry img {
+	border: navajowhite;
+}
+.post {
+	margin-bottom: 40px;
+}
+.post .entry-meta p {
+	clear: both;
+	color: #999;
+	font-size: 14px;
+}
+.post .entry-meta a {
+	color: #999;
+	font-size: 14px;
+}
+.post .entry-meta a:hover {
+	color: #ba2000;
+}
+#content .aligncenter a,
+#content .alignright a,
+#content .alignleft a,
+#content .alignnone a {
+	border: none;
+}
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: 0;
+	margin-right: 0;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+}
+.wp-caption {
+	line-height: 18px;
+	margin-bottom: 20px;
+	max-width: 540px !important; /* prevent too-wide images from breaking layout */
+	text-align: right;
+}
+.wp-caption img {
+	margin: 5px 0 0;
+}
+.wp-caption p.wp-caption-text {
+	border-bottom: 1px solid #e1e1e1;
+	color: #888;
+	font-size: 13px;
+	margin: 5px 0 5px 5px;
+	padding-bottom: 5px;
+}
+
+/* Aside Styles */
+.format-aside .entry p a,
+.category-aside .entry p a {
+	font-weight: bold;
+}
+.single .format-aside p a,
+.single .category-aside .entry p a {
+	font-weight: normal;
+}
+
+/* Status Styles */
+.format-status .entry p,
+.category-statuses .entry p {
+	background-color: #f1f1f1;
+	float: right;
+	margin-top: 0;
+	padding: 5px;
+	width: 455px;
+}
+.format-status .author-avatar,
+.category-statuses .author-avatar {
+	float: left;
+}
+.single .format-status .entry p {
+	background:none;
+	float: none;
+	margin: 12 0;
+	padding: 0;
+}
+
+/* Gallery Styles */
+#content .entry .gallery-thumb a,
+#content .entry .gallery-icon a {
+	border: none;
+}
+.format-gallery .entry .gallery-thumb,
+.category-gallery .entry .gallery-thumb {
+	float: left;
+	margin-right: 20px;
+}
+.entry-attachment .nav-previous,
+.home .nav-previous,
+.paged .nav-previous {
+	float: left;
+	width: 50%;
+}
+.entry-attachment .nav-next,
+.home .nav-next,
+.paged .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+.gallery {
+	margin: 0 auto 18px;
+}
+.gallery .gallery-item {
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+.gallery img {
+	border: 2px solid #cfcfcf;
+}
+.gallery-columns-2 .attachment-medium {
+	max-width: 92%;
+	height: auto;
+}
+.gallery-columns-4 .attachment-thumbnail {
+	max-width: 84%;
+	height: auto;
+}
+.gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+.gallery dl {
+	margin: 0;
+}
+.gallery img {
+	border: none;
+}
+.gallery br+br {
+	display: none;
+}
+#content .attachment img {/* single attachment images should be centered */
+	display: block;
+	margin: 0 auto;
+}
+
+/* Single Post Styles */
+#entry-author-info {
+	border-top: 1px solid #A5ABAB;
+	margin-top: 20px;
+	padding-top: 30px;
+}
+#author-avatar {
+	float: left;
+	margin-right: 20px;
+}
+#author-description h2 {
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#entry-author-info #author-description {
+	color: #666;
+	font-size: 14px;
+}
+#nav-below {
+	border-top: 1px solid #A5ABAB;
+	color: #666;
+	font-size: 14px;
+	margin-top: 40px;
+	padding-top: 20px;
+}
+
+/* Page Styles */
+.page {
+	margin-bottom: 40px;
+}
+
+/* Comment Styles */
+#comments {
+	border-top: 1px solid #A5ABAB;
+	margin-top: -20px;
+}
+.page #comments {
+	border: none;
+}
+.page .nocomments {
+	display: none;
+}
+.commentlist,
+.commentlist ul.children {
+	list-style-type: none;
+	padding: 0;
+}
+.commentlist ul.children li {
+	margin: ;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.commentlist li.comment {
+	margin: 0 0 20px;
+	padding: 0 0 0 54px;
+	position: relative;
+}
+.commentlist li:last-child {
+	margin-bottom: 0;
+}
+.commentlist .avatar {
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+.comment-author {
+}
+.comment-author cite {
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment-author cite a {
+	border-width: 0 0 1px 0;
+	border-style: none none solid none;
+	border-color: #C0C0C0;
+}
+.comment-author .says {
+	font-style: italic;
+}
+.comment .commentmetadata a {
+	color: #666;
+	font-size: 14px;
+}
+.comment .commentmetadata a:hover {
+	color: #ba2000;
+}
+.reply .comment-reply-link {
+	color: #666;
+	font-size: 13px;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+#commentform input,
+#commentform textarea {
+	font-size: 12px;
+	line-height: 18px;
+	width: 100%;
+}
+#commentform label {
+	color: #666;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+#commentform .required {
+	color: #ba2000;
+}
+#commentform .form-allowed-tags,
+#commentform .form-allowed-tags code {
+	color: #666;
+	font-size: 11px;
+}
+#commentform #submit {
+	color: #333;
+	font-size: 14px;
+	width: auto;
+}
+
+/* Footer Styles */
+#footer {
+	background:#fff;
+	border-top: 1px solid #A5ABAB;
+	clear: both;
+	min-height: 80px;
+	width: 100%;
+}
+#footer p {
+	padding:14px 0;
+	margin: 0;
+	color: #666;
+}
+#footer a {
+	color: #666;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #ba2000;
+	text-decoration: none;
+}
+#footer ul {
+	float: left;
+	padding: 0;
+	width: 300px;
+}
+#footer li {
+	display: inline;
+	list-style-type: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-size: 14px;
+}
+#footer #searchform {
+	border-left: 1px solid #A5ABAB;
+	float: right;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-top: 16px;
+	width: 220px;
+}
