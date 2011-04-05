@@ -70,6 +70,7 @@ h5 {
 }
 .entry-title {
 	font-weight: bold;
+	margin-top: 0px;
 }
 .author .page-title,
 .archive .page-title,
