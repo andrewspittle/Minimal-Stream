@@ -181,6 +181,7 @@ li {
 	clear: both;
 	color: #999;
 	font-size: 14px;
+	margin-bottom: 14px;
 }
 .post .entry-meta a {
 	color: #999;
@@ -247,8 +248,8 @@ img.aligncenter {
 }
 
 /* Aside Styles */
-.format-aside .entry p a,
-.category-aside .entry p a {
+.format-aside .entry p a:first-child,
+.category-aside .entry p a:first-child {
 	font-weight: bold;
 }
 .single .format-aside p a,
