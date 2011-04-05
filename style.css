@@ -269,7 +269,8 @@ img.aligncenter {
 .category-statuses .author-avatar {
 	float: left;
 }
-.single .format-status .entry p {
+.single .format-status .entry p,
+.category-statuses .entry p {
 	background:none;
 	float: none;
 	margin: 12 0;
@@ -345,6 +346,9 @@ img.aligncenter {
 }
 
 /* Single Post Styles */
+.single .entry-title {
+	margin-top: 0;
+}
 #entry-author-info {
 	border-top: 1px solid #A5ABAB;
 	margin-top: 20px;
