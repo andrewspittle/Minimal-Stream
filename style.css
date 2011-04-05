@@ -270,7 +270,7 @@ img.aligncenter {
 	float: left;
 }
 .single .format-status .entry p,
-.category-statuses .entry p {
+.single .category-statuses .entry p {
 	background:none;
 	float: none;
 	margin: 12 0;
@@ -473,11 +473,13 @@ img.aligncenter {
 	background:#fff;
 	border-top: 1px solid #A5ABAB;
 	clear: both;
+	margin-bottom: 20px;
 	min-height: 80px;
+	padding-bottom: 20px;
 	width: 100%;
 }
 #footer p {
-	padding:14px 0;
+	padding: 14px 0;
 	margin: 0;
 	color: #666;
 }
@@ -490,9 +492,8 @@ img.aligncenter {
 	text-decoration: none;
 }
 #footer ul {
-	float: left;
 	padding: 0;
-	width: 300px;
+	text-align: center;
 }
 #footer li {
 	display: inline;
@@ -502,12 +503,21 @@ img.aligncenter {
 	font-size: 14px;
 }
 #footer #searchform {
-	border-left: 1px solid #A5ABAB;
-	float: right;
-	padding-bottom: 20px;
-	padding-left: 10px;
-	padding-top: 16px;
-	width: 220px;
+	margin: 0 auto;
+	width: 180px;
+}
+#footer #s {
+	width: 180px;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	background-color: #ffffff;
+	height: 15px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	color: #666;
 }
 
 /* Footnote Styles */
