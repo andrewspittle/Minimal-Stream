@@ -9,7 +9,7 @@ if ( ! function_exists( 'minimalstream_setup' ) ):
 function minimalstream_setup() {
 	
 	// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'status' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'status', 'quote' ) );
 	
 }
 endif;

@@ -351,6 +351,32 @@ img.aligncenter {
 #content .attachment img {/* single attachment images should be centered */
 	display: block;
 	margin: 0 auto;
+	background-position: 0 0;
+}
+
+/* Quote Styles */
+.format-quote .entry blockquote,
+.category-quotes .entry blockquote {
+	background: url(images/quote.gif) no-repeat;
+	padding-left: 60px;
+}
+.format-quote .entry blockquote,
+.category-quotes .entry blockquote {
+	background: url(images/quote.gif) no-repeat 0 0;
+	border-left: 0;
+	margin-left: 0;
+	padding-left: 60px;
+}
+.format-quote .entry blockquote p,
+.category-quotes .entry blockquote p {
+	font-size: 16px;
+	margin: 21px 0;
+	text-align: left;
+}
+.format-quote .entry p,
+.category-quotes .entry p {
+	font-size: 14px;
+
 }
 
 /* Single Post Styles */

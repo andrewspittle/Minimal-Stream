@@ -63,16 +63,16 @@
 		
 <?php /* How to display posts of the Status format. The statuses category is the old way. */ ?>
 
-	<?php elseif ( 'status' == get_post_format( $post->ID ) || in_category( _x('statuses', 'statuses category slug', 'formatize' ) )  ) : ?>
+	<?php elseif ( 'status' == get_post_format( $post->ID ) || in_category( _x('statuses', 'statuses category slug', 'minimalstream' ) )  ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<div class="status-wrapper">
 				<div class="author-avatar">
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'formatize_author_bio_avatar_size', 60 ) ); ?>
+					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'minimalstream_author_bio_avatar_size', 60 ) ); ?>
 				</div><!-- .author-avatar -->
 
 				<div class="entry">
-					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'formatize' ) ); ?>
+					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'minimalstream' ) ); ?>
 				</div><!-- .entry-content -->
 				<div style="clear:both"></div>
 			</div>
@@ -82,6 +82,21 @@
 			</div>
 			
 		</div><!-- #post-## -->
+
+<?php /* How to display posts of the Quote format. The Quotes category is the old way. */ ?>
+
+	<?php elseif ( 'quote' == get_post_format( $post->ID ) || in_category( _x('quotes', 'quotes category slug', 'minimalstream' ) )  ) : ?>
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			<div class="entry">
+				<?php the_content('Read more &raquo;'); ?>
+			</div><!-- .entry -->
+			
+			<div class="entry-meta">
+				<p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">Posted on <?php the_time('F j, Y'); ?></a></p>
+			</div>
+
+		</div><!-- #post-ID -->
 
 <?php /* How to display all other posts. */ ?>
 
