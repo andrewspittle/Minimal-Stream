@@ -357,11 +357,6 @@ img.aligncenter {
 /* Quote Styles */
 .format-quote .entry blockquote,
 .category-quotes .entry blockquote {
-	background: url(images/quote.gif) no-repeat;
-	padding-left: 60px;
-}
-.format-quote .entry blockquote,
-.category-quotes .entry blockquote {
 	background: url(images/quote.gif) no-repeat 0 0;
 	border-left: 0;
 	margin-left: 0;
