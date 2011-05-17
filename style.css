@@ -4,7 +4,7 @@ Theme URI: http://andrewspittle.net/projects
 Description: A very clean minimalist theme.
 Author: Andrew Spittle
 Author URI: http://andrewspittle.net
-Version: 0.3
+Version: 0.3.1
 .
 This theme is uncopyrighted, free, and offered as is.
 .
@@ -13,7 +13,7 @@ This theme is uncopyrighted, free, and offered as is.
 #container {
 	margin: 0 auto;
 	padding-top: 40px;
-	width: 540px;
+	width: 520px;
 }
 
 body {
@@ -31,17 +31,17 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-family: "HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 h1 {
 	color: #333;
-	font-size: 1.2em;
+	font-size: 26px;
 	font-weight: bold;
 	line-height: 22px;
 }
 h2 {
 	color: #333;
-	font-size: 1.2em;
+	font-size: 23px;
 	font-weight: normal;
 	line-height: 20px;
 }
@@ -59,18 +59,14 @@ h5 {
 }
 #site-title {
 	float: left;
+	margin-bottom: 5px;
 }
 #site-description {
 	color: #666;
 	float: left;
 	line-height: 22px;
-	margin-left: 20px;
-	margin-top: 15px;
 	font-style: italic;
 	font-size: 14px;
-}
-.entry-title {
-	font-weight: bold;
 }
 .author .page-title,
 .archive .page-title,
@@ -113,7 +109,7 @@ a {
 	text-decoration: none;
 }
 a:link {
-	color: #333;
+	color: #000;
 	text-decoration: none;
 }
 a:visited {
@@ -134,12 +130,41 @@ li {
 	padding: 6px 0 0 0;
 }
 
+/* Header Styles */
+#header {
+	border-bottom: 1px solid #A5ABAB;
+	min-height: 60px;
+	padding-bottom: 20px;
+}
+#menu ul {
+	float: right;
+	margin-top: 10px;
+	padding: 10px 0;
+	text-align: right;
+	width: 250px;
+}
+#menu li {
+	display: inline;
+	list-style-type: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-size: 14px;
+}
+#menu a {
+	color: #666;
+	text-decoration: none;
+}
+#menu a:hover {
+	color: #ba2000;
+	text-decoration: none;
+}
+
 /* Content Styles */
 #content {
 	float: right;
 	margin-bottom: 24px;
 	margin-top: 40px;
-	width: 540px;
+	width: 520px;
 }
 #content pre,
 #content kbd,
@@ -152,7 +177,7 @@ li {
 	font-size: 13px;
 }
 .entry a:link {
-	color: #303030;
+	color: #000;
 	text-decoration: none;
 	border-width: 0 0 1px 0;
 	border-style: none none solid none;
@@ -183,6 +208,7 @@ li {
 	color: #999;
 	font-size: 14px;
 	margin-bottom: 14px;
+	margin-top: 7px;
 }
 .post .entry-meta a {
 	color: #999;
@@ -234,7 +260,7 @@ img.aligncenter {
 .wp-caption {
 	line-height: 18px;
 	margin-bottom: 20px;
-	max-width: 540px !important; /* prevent too-wide images from breaking layout */
+	max-width: 520px !important; /* prevent too-wide images from breaking layout */
 	text-align: right;
 }
 .wp-caption img {
@@ -263,7 +289,7 @@ img.aligncenter {
 .category-statuses .entry p {
 	float: right;
 	margin-top: 0;
-	width: 465px;
+	width: 445px;
 }
 .format-status .entry-meta p,
 .category-statuses .entry-meta p {
@@ -376,6 +402,7 @@ img.aligncenter {
 
 /* Single Post Styles */
 .single .entry-title {
+	margin-bottom: 7px;
 	margin-top: 0;
 }
 #entry-author-info {
@@ -401,7 +428,7 @@ img.aligncenter {
 	border-top: 1px solid #A5ABAB;
 	color: #666;
 	font-size: 14px;
-	margin-top: 40px;
+	margin-top: 30px;
 	padding-top: 20px;
 }
 
@@ -520,19 +547,8 @@ img.aligncenter {
 	color: #ba2000;
 	text-decoration: none;
 }
-#footer ul {
-	padding: 0;
-	text-align: center;
-}
-#footer li {
-	display: inline;
-	list-style-type: none;
-	margin-right: 5px;
-	margin-left: 5px;
-	font-size: 14px;
-}
 #footer #searchform {
-	margin: 0 auto;
+	margin: 20px auto;
 	width: 180px;
 }
 #footer #s {

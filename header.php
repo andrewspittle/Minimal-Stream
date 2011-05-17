@@ -3,6 +3,8 @@
 
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<!-- Mobile viewport settings -->
+<meta name="viewport" content="width=560" />
 
 <title><?php
 	/*
@@ -48,6 +50,13 @@
 <body <?php body_class(); ?>>
 
 <div id="container">
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<?php wp_list_pages('depth=1&title_li='); ?>
+			</ul>
+		</div>
 	
-	<h1 id="site-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-	<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+		<h1 id="site-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+		<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+	</div>
