@@ -63,7 +63,7 @@ h5 {
 }
 #site-description {
 	color: #666;
-	float: left;
+	clear: both;
 	line-height: 22px;
 	font-style: italic;
 	font-size: 14px;
@@ -436,6 +436,9 @@ img.aligncenter {
 /* Page Styles */
 .page {
 	margin-bottom: 40px;
+}
+.page .entry-title {
+	margin-top: 0;
 }
 
 /* Comment Styles */
