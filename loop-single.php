@@ -4,7 +4,7 @@
 
 			<h2 class="entry-title"><?php the_title(); ?></h2>
 			<div class="entry-meta">
-				<p>Posted on <?php the_time('F j, Y'); ?> <span class="meta-sep">|</span> <?php the_category(', ') ?> <span class="meta-sep">|</span> <?php tweet_this(); ?></p>
+				<p>Posted on <?php the_time('F j, Y'); ?> <span class="meta-sep"> • </span> <?php the_category(', ') ?> <span class="meta-sep"> • </span> <?php tweet_this(); ?></p>
 			</div>
 
 			<div class="entry">
