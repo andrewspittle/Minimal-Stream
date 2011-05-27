@@ -77,7 +77,7 @@ function minimalstream_comment( $comment, $args, $depth ) {
 }
 endif;
 /* Props Noel http://blog.noel.io/tweet-this-wordpress-function/ */
-function tweet_this() {
+function ms_tweet_this() {
 	global $post;
 	$tweet = sprintf( __('Currently reading %1$s %2$s'), $post->post_title, wp_get_shortlink() );
 	echo '<a class="tweethis" href="http://twitter.com/home?status=' . urlencode( $tweet ) . '">Tweet this</a>';
