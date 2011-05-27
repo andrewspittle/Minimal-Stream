@@ -82,4 +82,34 @@ function ms_tweet_this() {
 	$tweet = sprintf( __('Currently reading %1$s %2$s'), $post->post_title, wp_get_shortlink() );
 	echo '<a class="tweethis" href="http://twitter.com/home?status=' . urlencode( $tweet ) . '">Tweet this</a>';
 }
+function ms_archives_column() {
+	// Grab the archives. Return the output
+	$get_archives = wp_get_archives( 'echo=0' );
+	// Split into array items
+	$archives_array = explode('</li>',$get_archives);
+	// Amount of archives (count of items in array)
+	$results_total = count($archives_array);
+	// How many columns to display
+	$archives_per_list = ceil($results_total / 3);
+	// Counter number for tagging onto each list
+	$list_number = 1;
+	// Set the archive result counter to zero
+	$result_number = 0;
+	?>
+	<ul class="archive_col" id="archive-col-<?php echo $list_number; ?>">
+	<?php
+	foreach($archives_array as $archive) {
+		$result_number++;
+
+		if($result_number % $archives_per_list == 0) {
+			$list_number++;
+			echo $archive.'</li>
+			</ul>
+			<ul class="archive_col" id="archive-col-'.$list_number.'">';
+		}
+		else {
+			echo $archive.'</li>';
+		}
+	}
+}
 ?>

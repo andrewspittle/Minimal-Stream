@@ -4,7 +4,7 @@ Theme URI: http://andrewspittle.net/projects
 Description: A very clean minimalist theme.
 Author: Andrew Spittle
 Author URI: http://andrewspittle.net
-Version: 0.3.1
+Version: 0.4
 .
 This theme is uncopyrighted, free, and offered as is.
 .
@@ -567,6 +567,26 @@ img.aligncenter {
 	padding-bottom: 4px;
 	padding-left: 4px;
 	color: #666;
+}
+
+/* Archive column styles */
+#archives-wrap {
+	min-height: 130px;
+}
+#footer #archives-head {
+	margin-bottom: 0;
+	color: #666;
+}
+#footer .archive_col {
+	float: left;
+	list-style-type: none;
+	margin: 0 1.5%;
+	padding: 0;
+	width: 30%;
+}
+#footer .archive_col li {
+	font-size: 13px;
+	line-height: 1.5em;
 }
 
 /* Footnote Styles */
