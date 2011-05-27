@@ -551,6 +551,10 @@ img.aligncenter {
 	color: #ba2000;
 	text-decoration: none;
 }
+#footer-search {
+	clear: both;
+	padding-top: 10px;
+}
 #footer #searchform {
 	margin: 20px auto;
 	width: 180px;

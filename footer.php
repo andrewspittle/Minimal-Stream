@@ -3,7 +3,9 @@
 	<div id="archives-wrap">
 		<?php ms_archives_column(); ?>
 	</div>
-	<?php get_search_form(); ?>
+	<div id="footer-search">
+		<?php get_search_form(); ?>
+	</div>
 </div><!-- #footer -->
 </div><!-- #container -->
 
