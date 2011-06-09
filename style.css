@@ -1,10 +1,10 @@
 /*   
-Theme Name: Minimal Stream
+Theme Name: Photo Stream
 Theme URI: http://andrewspittle.net/projects
-Description: A very clean minimalist theme.
+Description: A very simple photoblog theme.
 Author: Andrew Spittle
 Author URI: http://andrewspittle.net
-Version: 0.4
+Version: 0.5
 .
 This theme is uncopyrighted, free, and offered as is.
 .
@@ -117,7 +117,7 @@ a:visited {
 	text-decoration: none;
 }
 a:hover {
-	color: #ba2000;
+	color: #00A6C7;
 	text-decoration: none;
 }
 
@@ -156,7 +156,7 @@ li {
 	text-decoration: none;
 }
 #menu a:hover {
-	color: #ba2000;
+	color: #00A6C7;
 	text-decoration: none;
 }
 
@@ -166,6 +166,18 @@ li {
 	margin-bottom: 24px;
 	margin-top: 40px;
 	width: 520px;
+}
+#content .entry h1,
+#content .entry h2,
+#content .entry h3,
+#content .entry h4,
+#content .entry h5,
+#content .entry h6 {
+	color: #00A6C7;
+	margin-bottom: -14px;
+	font-weight: normal;
+	font-style: normal;
+	text-transform: uppercase;
 }
 #content pre,
 #content kbd,
@@ -192,7 +204,7 @@ li {
 	border-color: #C0C0C0;
 }
 .entry a:hover {
-	color: #ba2000;
+	color: #00A6C7;
 	border-width: 0 0 1px 0;
 	border-style: none none solid none;
 	border-color: #C0C0C0;
@@ -216,7 +228,7 @@ li {
 	font-size: 14px;
 }
 .post .entry-meta a:hover {
-	color: #ba2000;
+	color: #00A6C7;
 }
 #content .aligncenter a,
 #content .alignright a,
@@ -495,7 +507,7 @@ img.aligncenter {
 	font-size: 14px;
 }
 .comment .commentmetadata a:hover {
-	color: #ba2000;
+	color: #00A6C7;
 }
 .reply .comment-reply-link {
 	color: #666;
@@ -515,7 +527,7 @@ img.aligncenter {
 	font-size: 13px;
 }
 #commentform .required {
-	color: #ba2000;
+	color: #00A6C7;
 }
 #commentform .form-allowed-tags,
 #commentform .form-allowed-tags code {
@@ -548,7 +560,7 @@ img.aligncenter {
 	text-decoration: none;
 }
 #footer a:hover {
-	color: #ba2000;
+	color: #00A6C7;
 	text-decoration: none;
 }
 #footer-search {
