@@ -290,10 +290,9 @@ img.alignright {
 }
 .aligncenter,
 img.aligncenter {
-	clear: both;
 	display: block;
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 img.alignleft,
 img.alignright,
