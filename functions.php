@@ -88,13 +88,13 @@ function ms_tweet_this() {
 }
 function ms_archives_column() {
 	// Grab the archives. Return the output
-	$get_archives = wp_get_archives( 'echo=0&limit=12' );
+	$get_archives = wp_get_archives( 'echo=0' );
 	// Split into array items
 	$archives_array = explode('</li>',$get_archives);
 	// Amount of archives (count of items in array)
 	$results_total = count($archives_array);
 	// How many columns to display
-	$archives_per_list = ceil($results_total / 2);
+	$archives_per_list = ceil($results_total / 3);
 	// Counter number for tagging onto each list
 	$list_number = 1;
 	// Set the archive result counter to zero
