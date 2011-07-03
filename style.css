@@ -214,7 +214,7 @@ li {
 	border: navajowhite;
 }
 .post {
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 }
 .post .entry-meta p {
 	clear: both;
@@ -228,6 +228,36 @@ li {
 	font-size: 14px;
 }
 .post .entry-meta a:hover {
+	color: #00A6C7;
+}
+.post .entry-tags {
+	float: left;
+	margin-left: -160px;
+	text-align: right;
+	width: 120px;
+}
+.post .entry-tags h4 {
+	color: #00A6C7;
+	margin-bottom: 0px;
+	margin-top: 7px;
+	font-weight: normal;
+	font-style: normal;
+	text-transform: uppercase;
+}
+.post .entry-tags ul {
+	margin: 0;
+	padding: 0;
+}
+.post .entry-tags li {
+	font-size: 14px;
+	line-height: 1.74em;
+	list-style-type: none;
+	padding: 0;
+}
+.post .entry-tags a {
+	color: #999;
+}
+.post .entry-tags a:hover {
 	color: #00A6C7;
 }
 #content .aligncenter a,

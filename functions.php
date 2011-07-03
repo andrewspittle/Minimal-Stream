@@ -11,6 +11,10 @@ function minimalstream_setup() {
 	// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'status', 'quote' ) );
 	
+	// This theme uses post thumbnails
+	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'book-thumb', 150, 9999 ); //300 pixels wide (and unlimited height)
+	
 }
 endif;
 
@@ -84,13 +88,13 @@ function ms_tweet_this() {
 }
 function ms_archives_column() {
 	// Grab the archives. Return the output
-	$get_archives = wp_get_archives( 'echo=0' );
+	$get_archives = wp_get_archives( 'echo=0&limit=12' );
 	// Split into array items
 	$archives_array = explode('</li>',$get_archives);
 	// Amount of archives (count of items in array)
 	$results_total = count($archives_array);
 	// How many columns to display
-	$archives_per_list = ceil($results_total / 3);
+	$archives_per_list = ceil($results_total / 2);
 	// Counter number for tagging onto each list
 	$list_number = 1;
 	// Set the archive result counter to zero

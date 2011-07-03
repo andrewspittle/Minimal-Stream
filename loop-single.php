@@ -6,6 +6,10 @@
 			<div class="entry-meta">
 				<p>Posted on <?php the_time('F j, Y'); ?> <span class="meta-sep"> • </span> <?php the_category(', ') ?> <span class="meta-sep"> • </span> <?php ms_tweet_this(); ?></p>
 			</div>
+			
+			<div class="entry-tags">
+				<?php the_tags('<h4>Tags</h4><ul><li>','</li><li>','</li></ul>'); ?>
+			</div>
 
 			<div class="entry">
 
