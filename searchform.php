@@ -1,3 +1,13 @@
-<form role="search" id="searchform" method="get" action="<?php echo home_url( '/' ); ?>">
-	<input type="text" name="s" id="s" value="Type and press enter..." onfocus="if (this.value == 'Type and press enter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Type and press enter...';}" />
-</form>
+<?php
+/**
+ * The template for displaying search forms in Minimal Stream
+ *
+ * @package Minimal Stream
+ * @since Minimal Stream 1.0
+ */
+?>
+	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+		<label for="s" class="assistive-text"><?php _e( 'Search', 'minimal_stream' ); ?></label>
+		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'minimal_stream' ); ?>" />
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'minimal_stream' ); ?>" />
+	</form>

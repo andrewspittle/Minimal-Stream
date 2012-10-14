@@ -1,119 +1,122 @@
 <?php
+/**
+ * Minimal Stream functions and definitions
+ *
+ * @package Minimal Stream
+ * @since Minimal Stream 1.0
+ */
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ *
+ * @since Minimal Stream 1.0
+ */
 if ( ! isset( $content_width ) )
-	$content_width = 560;
+	$content_width = 640; /* pixels */
 
-/** Tell WordPress to run minimalstream_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'minimalstream_setup' );
+if ( ! function_exists( 'minimal_stream_setup' ) ):
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
+ *
+ * @since Minimal Stream 1.0
+ */
+function minimal_stream_setup() {
 
-if ( ! function_exists( 'minimalstream_setup' ) ):
-function minimalstream_setup() {
+	/**
+	 * Custom template tags for this theme.
+	 */
+	require( get_template_directory() . '/inc/template-tags.php' );
+
+	/**
+	 * Custom functions that act independently of the theme templates
+	 */
+	//require( get_template_directory() . '/inc/tweaks.php' );
+
+	/**
+	 * Custom Theme Options
+	 */
+	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+
+	/**
+	 * Make theme available for translation
+	 * Translations can be filed in the /languages/ directory
+	 * If you're building a theme based on Minimal Stream, use a find and replace
+	 * to change 'minimal_stream' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( 'minimal_stream', get_template_directory() . '/languages' );
+
+	/**
+	 * Add default posts and comments RSS feed links to head
+	 */
+	add_theme_support( 'automatic-feed-links' );
 	
-	// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'status', 'quote' ) );
-	
-	// This theme uses post thumbnails
+	/**
+	 * Enable support for Post Thumbnails
+	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'book-thumb', 150, 9999 ); //300 pixels wide (and unlimited height)
 	
+	/**
+	 * Set Post Thumbnail size
+	 */
+	 add_image_size( 'featured-image', 1200, 9999 ); //1200 pixels wide (and unlimited height)
+
+	/**
+	 * This theme uses wp_nav_menu() in one location.
+	 */
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'minimal_stream' ),
+	) );
+
+	/**
+	 * Add support for the Aside Post Formats
+	 */
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'link', 'status' ) );
 }
-endif;
+endif; // minimal_stream_setup
+add_action( 'after_setup_theme', 'minimal_stream_setup' );
 
 /**
- * Remove inline styles printed when the gallery shortcode is used.
+ * Register widgetized area and update footer with default widgets
+ *
+ * @since Minimal Stream 1.0
  */
-add_filter( 'use_default_gallery_style', '__return_false' );
+function minimal_stream_widgets_init() {
+	register_sidebar( array(
+		'name' => __( 'Footer', 'minimal_stream' ),
+		'id' => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+}
+add_action( 'widgets_init', 'minimal_stream_widgets_init' );
 
 /**
- * Deprecated way to remove inline styles printed when the gallery shortcode is used.
- *
- * This function is no longer needed or used. Use the use_default_gallery_style
- * filter instead, as seen above.
- *
+ * Enqueue scripts and styles
  */
-function minimalstream_remove_gallery_css( $css ) {
-	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
-}
-// Backwards compatibility with WordPress 3.0.
-if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
-	add_filter( 'gallery_style', 'minimalstream_remove_gallery_css' );
-	
-if ( ! function_exists( 'minimalstream_comment' ) ) :
-function minimalstream_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case '' :
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<div id="comment-<?php comment_ID(); ?>">
-		<div class="comment-author vcard">
-			<?php echo get_avatar( $comment, 40 ); ?>
-			<?php printf( __( '%s <span class="says">says:</span>', 'minimalstream' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-		</div><!-- .comment-author .vcard -->
-		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'minimalstream' ); ?></em>
-			<br />
-		<?php endif; ?>
-
-		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-			<?php
-				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'minimalstream' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'minimalstream' ), ' ' );
-			?>
-		</div><!-- .comment-meta .commentmetadata -->
-
-		<div class="comment-body"><?php comment_text(); ?></div>
-
-		<div class="reply">
-			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-		</div><!-- .reply -->
-	</div><!-- #comment-##  -->
-
-	<?php
-			break;
-		case 'pingback'  :
-		case 'trackback' :
-	?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'minimalstream' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'minimalstream' ), ' ' ); ?></p>
-	<?php
-			break;
-	endswitch;
-}
-endif;
-/* Props Noel http://blog.noel.io/tweet-this-wordpress-function/ */
-function ms_tweet_this() {
+function minimal_stream_scripts() {
 	global $post;
-	$tweet = sprintf( __('Currently reading %1$s %2$s'), $post->post_title, wp_get_shortlink() );
-	echo '<a class="tweethis" href="http://twitter.com/home?status=' . urlencode( $tweet ) . '">Tweet this</a>';
-}
-function ms_archives_column() {
-	// Grab the archives. Return the output
-	$get_archives = wp_get_archives( 'echo=0' );
-	// Split into array items
-	$archives_array = explode('</li>',$get_archives);
-	// Amount of archives (count of items in array)
-	$results_total = count($archives_array);
-	// How many columns to display
-	$archives_per_list = ceil($results_total / 3);
-	// Counter number for tagging onto each list
-	$list_number = 1;
-	// Set the archive result counter to zero
-	$result_number = 0;
-	?>
-	<ul class="archive_col" id="archive-col-<?php echo $list_number; ?>">
-	<?php
-	foreach($archives_array as $archive) {
-		$result_number++;
 
-		if($result_number % $archives_per_list == 0) {
-			$list_number++;
-			echo $archive.'</li>
-			</ul>
-			<ul class="archive_col" id="archive-col-'.$list_number.'">';
-		}
-		else {
-			echo $archive.'</li>';
-		}
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
+		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
-?>
+add_action( 'wp_enqueue_scripts', 'minimal_stream_scripts' );
+
+/**
+ * Implement the Custom Header feature
+ */
+require( get_template_directory() . '/inc/custom-header.php' );

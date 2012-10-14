@@ -1,25 +1,39 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying Search Results pages.
+ *
+ * @package Minimal Stream
+ * @since Minimal Stream 1.0
+ */
 
-	<div id="content" role="main">
+get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
-		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyten' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		<?php
-		/* Run the loop for the search to output the results.
-		 * If you want to overload this in a child theme then include a file
-		 * called loop-search.php and that will be used instead.
-		 */
-		 get_template_part( 'loop', 'index' );
-		?>
-<?php else : ?>
-		<div id="post-0" class="post no-results not-found">
-			<h2 class="entry-title"><?php _e( 'Nothing Found', 'twentyten' ); ?></h2>
-			<div class="entry-content">
-				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyten' ); ?></p>
-				<?php get_search_form(); ?>
-			</div><!-- .entry-content -->
-		</div><!-- #post-0 -->
-<?php endif; ?>
-	</div><!-- #content -->
+		<section id="primary" class="site-content">
+			<div id="content" role="main">
 
+			<?php if ( have_posts() ) : ?>
+
+				<header class="page-header">
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'minimal_stream' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				</header><!-- .page-header -->
+
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', get_post_format() ); ?>
+
+				<?php endwhile; ?>
+
+				<?php minimal_stream_content_nav( 'nav-below' ); ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'no-results', 'search' ); ?>
+
+			<?php endif; ?>
+
+			</div><!-- #content -->
+		</section><!-- #primary .site-content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

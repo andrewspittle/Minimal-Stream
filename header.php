@@ -1,11 +1,17 @@
-<!DOCTYPE HTML> 
-<html lang=en>
-
-<head profile="http://gmpg.org/xfn/11">
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<!-- Mobile viewport settings -->
-<meta name="viewport" content="width=560" />
-
+<?php
+/**
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="main">
+ *
+ * @package Minimal Stream
+ * @since Minimal Stream 1.0
+ */
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -24,39 +30,43 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'minimalstream' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'minimal_stream' ), max( $paged, $page ) );
 
 	?></title>
-
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-<?php
-	/* We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 */
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-
-	/* Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-	wp_head();
-?>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<script src="http://andsp.com/mint/?js" type="text/javascript"></script>
+<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
 
-<div id="container">
-	<div id="header">
-		<div id="menu">
-			<ul>
-				<?php wp_list_pages('depth=1&title_li='); ?>
-			</ul>
-		</div>
-	
-		<h1 id="site-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-		<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-	</div>
+<body <?php body_class(); ?>>
+<div id="page" class="hfeed site">
+	<?php do_action( 'before' ); ?>
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<?php
+			if ( get_header_image() ) : ?>
+				<a class="home-link" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" class="header-image" />
+				</a>
+			<?php endif; ?>
+			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</hgroup>
+		
+		<nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text"><?php _e( 'Menu', 'minimal_stream' ); ?></h1>
+			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'minimal_stream' ); ?>"><?php _e( 'Skip to content', 'minimal_stream' ); ?></a></div>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- .site-navigation .main-navigation -->
+		
+		<section class="header-search">
+			<?php get_search_form(); ?>
+		</section>
+	</header><!-- #masthead .site-header -->
+
+	<div id="main">

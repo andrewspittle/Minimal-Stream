@@ -1,9 +1,32 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The Template for displaying all single posts.
+ *
+ * @package Minimal Stream
+ * @since Minimal Stream 1.0
+ */
 
-	<div id="content" role="main">
+get_header(); ?>
 
-		<?php get_template_part( 'loop', 'single' ); ?>
+		<div id="primary" class="site-content">
+			<div id="content" role="main">
 
-	</div>
-	
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'content', get_post_format() ); ?>
+
+				<?php minimal_stream_content_nav( 'nav-below' ); ?>
+
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template( '', true );
+				?>
+
+			<?php endwhile; // end of the loop. ?>
+
+			</div><!-- #content -->
+		</div><!-- #primary .site-content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
