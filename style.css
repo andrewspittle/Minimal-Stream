@@ -426,6 +426,7 @@ header[role="banner"] nav a:focus {
 
 article.post {
 	clear: both;
+	padding-bottom: 21px;
 	margin-bottom: 60px;
 }
 .single article.post {
@@ -693,10 +694,12 @@ object {
 ----------------------------------------------- */
 
 #content .site-navigation {
+	border-top: 1px solid #f1f1f1;
 	clear: both;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: 20px 0 0 0;
+	margin: 21px 0;
 	overflow: hidden;
+	padding-top: 21px;
 }
 #content .site-navigation a {
 	color: #989898;
@@ -716,11 +719,17 @@ object {
 	text-align: right;
 	width: 50%;
 }
+.home #content .site-navigation,
+.search #content .site-navigation,
+.archive #content .site-navigation {
+	border-top: none;
+}
 
 /* =Comments
 ----------------------------------------------- */
 
 #comments {
+	border-top: 1px solid #f1f1f1;
 	padding: 42px 0 0 0;
 }
 #comments .commentlist,
@@ -934,7 +943,7 @@ aside.widget_nav_menu ul {
 	}
 	header[role="banner"] {
 		background-color: #f1f1f1;
-		border-top: 3px solid #ba2000;
+		border-top: 4px solid #ba2000;
 		float: left;
 		overflow: hidden;
 		padding: 0 2%;
