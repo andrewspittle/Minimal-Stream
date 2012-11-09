@@ -375,10 +375,8 @@ header[role="banner"] .header-image {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-//	text-align: right;
 }
 .main-navigation li {
-//	display: inline-block;
 	margin: 0 20px;
 }
 .main-navigation a {
