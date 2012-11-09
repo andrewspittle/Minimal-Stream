@@ -99,7 +99,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #000;
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -148,7 +148,7 @@ dfn, cite, em, i {
 }
 blockquote {
 	border-left: 4px solid #f1f1f1;
-	color: #666;
+	color: #333;
 	margin: 0;
 	padding: 0 0 0 1.5em;
 }
