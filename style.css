@@ -732,16 +732,26 @@ object {
 	border-top: 1px solid #f1f1f1;
 	padding: 42px 0 0 0;
 }
+#comments .comments-title {
+	color: #666;
+	margin-bottom: 21px;
+}
 #comments .commentlist,
 #comments .commentlist ul {
 	list-style-type: none;
 	margin: 0;
 }
+#comments .commentlist li {
+	margin-bottom: 21px;
+}
 #comments .commentlist .children {
 	margin: 0 0 0 5%;
 }
-#comments .comment-author cite {
+#comments .comment-author {
 	color: #666;
+	font-size: 14px;
+}
+#comments .comment-author cite {
 	font-style: normal;
 }
 #comments .comment-content {
@@ -760,10 +770,6 @@ object {
 	-webkit-border-radius: 50%; /* Saf3+, Chrome */
 	border-radius: 50%; /* Opera 10.5, IE 9 */
 	/*-moz-border-radius: 50%; Disabled for FF1+ */
-}
-.bypostauthor {
-	background-color: #f1f1f1;
-	padding: 5px 10px;
 }
 .comment .reply {
 	text-align: right;
