@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying status posts
+ * The template for displaying quote posts
  *
  * @package Minimal Stream
  * @since Minimal Stream 1.0

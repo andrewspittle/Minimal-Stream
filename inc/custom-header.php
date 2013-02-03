@@ -1,6 +1,17 @@
 <?php
 /**
- * Custom header implementation. Props _s.
+ * Sample implementation of the Custom Header feature
+ * http://codex.wordpress.org/Custom_Headers
+ *
+ * You can add an optional custom header image to header.php like so ...
+
+	<?php $header_image = get_header_image();
+	if ( ! empty( $header_image ) ) { ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+		</a>
+	<?php } // if ( ! empty( $header_image ) ) ?>
+
  *
  * @package Minimal Stream
  * @since Minimal Stream 1.0
@@ -14,6 +25,7 @@
  * Use feature detection of wp_get_theme() which was introduced
  * in WordPress 3.4.
  *
+ * @uses minimal_stream_header_style()
  * @uses minimal_stream_admin_header_style()
  * @uses minimal_stream_admin_header_image()
  *
@@ -25,8 +37,8 @@ function minimal_stream_custom_header_setup() {
 		'default-text-color'     => '000',
 		'width'                  => 250,
 		'height'                 => 250,
-		'flex-height'            => false,
-		'header-text'			 => false,
+		'flex-height'            => true,
+		'wp-head-callback'       => 'minimal_stream_header_style',
 		'admin-head-callback'    => 'minimal_stream_admin_header_style',
 		'admin-preview-callback' => 'minimal_stream_admin_header_image',
 	);
@@ -57,7 +69,7 @@ add_action( 'after_setup_theme', 'minimal_stream_custom_header_setup' );
  * @return stdClass All properties represent attributes of the curent header image.
  *
  * @package _s
- * @since Minimal Stream 1.1
+ * @since _s 1.1
  */
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -71,13 +83,54 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 	}
 }
 
+if ( ! function_exists( 'minimal_stream_header_style' ) ) :
+/**
+ * Styles the header image and text displayed on the blog
+ *
+ * @see minimal_stream_custom_header_setup().
+ *
+ * @since _s 1.0
+ */
+function minimal_stream_header_style() {
+
+	// If no custom options for text are set, let's bail
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+		return;
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == get_header_textcolor() ) :
+	?>
+		.site-title,
+		.site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		.site-title a,
+		.site-description {
+			color: #<?php echo get_header_textcolor(); ?> !important;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; // minimal_stream_header_style
+
 if ( ! function_exists( 'minimal_stream_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
  * @see minimal_stream_custom_header_setup().
  *
- * @since Minimal Stream 1.0
+ * @since _s 1.0
  */
 function minimal_stream_admin_header_style() {
 ?>
@@ -85,11 +138,16 @@ function minimal_stream_admin_header_style() {
 	.appearance_page_custom-header #headimg {
 		border: none;
 	}
+	#headimg h1,
+	#desc {
+	}
+	#headimg h1 {
+	}
+	#headimg h1 a {
+	}
+	#desc {
+	}
 	#headimg img {
-		max-height: 75px;
-		max-width: 100%;
-		-webkit-border-radius: 50%; /* Saf3+, Chrome */
-		border-radius: 50%; /* Opera 10.5, IE 9 */
 	}
 	</style>
 <?php
@@ -102,13 +160,21 @@ if ( ! function_exists( 'minimal_stream_admin_header_image' ) ) :
  *
  * @see minimal_stream_custom_header_setup().
  *
- * @since Minimal Stream 1.0
+ * @since _s 1.0
  */
 function minimal_stream_admin_header_image() { ?>
 	<div id="headimg">
+		<?php
+		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
+			$style = ' style="display:none;"';
+		else
+			$style = ' style="color:#' . get_header_textcolor() . ';"';
+		?>
+		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
-			<a id="name" onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" alt="" /></a>
+			<img src="<?php echo esc_url( $header_image ); ?>" alt="" />
 		<?php endif; ?>
 	</div>
 <?php }

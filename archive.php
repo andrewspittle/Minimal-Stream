@@ -10,8 +10,8 @@
 
 get_header(); ?>
 
-		<section id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+		<section id="primary" class="site-content">
+			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -67,6 +67,8 @@ get_header(); ?>
 					?>
 				</header><!-- .page-header -->
 
+				<?php rewind_posts(); ?>
+
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -88,7 +90,8 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			</div><!-- #content .site-content -->
-		</section><!-- #primary .content-area -->
+			</div><!-- #content -->
+		</section><!-- #primary .site-content -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

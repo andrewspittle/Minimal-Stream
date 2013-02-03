@@ -14,8 +14,8 @@
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+		<div id="primary" class="site-content">
+			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -34,13 +34,14 @@ get_header(); ?>
 
 				<?php minimal_stream_content_nav( 'nav-below' ); ?>
 
-			<?php else : ?>
+			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
 
 				<?php get_template_part( 'no-results', 'index' ); ?>
 
 			<?php endif; ?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+			</div><!-- #content -->
+		</div><!-- #primary .site-content -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

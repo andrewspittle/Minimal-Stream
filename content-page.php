@@ -16,8 +16,7 @@
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'minimal_stream' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-	
-	<footer class="entry-meta">
+	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'minimal_stream' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer>
+	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

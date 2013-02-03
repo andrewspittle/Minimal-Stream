@@ -8,16 +8,14 @@
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+		<div id="primary" class="site-content">
+			<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
 
 				<?php minimal_stream_content_nav( 'nav-below' ); ?>
-				
-				<?php minimal_stream_author_bio(); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
@@ -27,7 +25,8 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+			</div><!-- #content -->
+		</div><!-- #primary .site-content -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
