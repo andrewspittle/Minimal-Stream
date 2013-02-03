@@ -34,14 +34,6 @@
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'minimal_stream' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'minimal_stream' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'minimal_stream' ) ); ?></div>
-		</nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
-		<?php endif; // check for comment navigation ?>
-
 		<ol class="commentlist">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
@@ -50,7 +42,18 @@
 				 * define minimal_stream_comment() and that will be used instead.
 				 * See minimal_stream_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'minimal_stream_comment' ) );
+				wp_list_comments( array( 'callback' => 'minimal_stream_comment', 'type' => 'comment' ) );
+			?>
+		</ol><!-- .commentlist -->
+		<ol class="commentlist">
+			<?php
+				/* Loop through and list the pingbacks. Tell wp_list_comments()
+				 * to use minimal_stream_comment() to format the pingbacks.
+				 * If you want to overload this in a child theme then you can
+				 * define minimal_stream_comment() and that will be used instead.
+				 * See minimal_stream_comment() in inc/template-tags.php for more.
+				 */
+				wp_list_comments( array( 'callback' => 'minimal_stream_comment', 'type' => 'pingback' ) );
 			?>
 		</ol><!-- .commentlist -->
 

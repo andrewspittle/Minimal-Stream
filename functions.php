@@ -12,9 +12,9 @@
  * @since Minimal Stream 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 500; /* pixels */
 
-if ( ! function_exists( 'minimal_stream_setup' ) ):
+if ( ! function_exists( 'minimal_stream_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -32,16 +32,6 @@ function minimal_stream_setup() {
 	require( get_template_directory() . '/inc/template-tags.php' );
 
 	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	//require( get_template_directory() . '/inc/tweaks.php' );
-
-	/**
-	 * Custom Theme Options
-	 */
-	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
-
-	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Minimal Stream, use a find and replace
@@ -53,16 +43,17 @@ function minimal_stream_setup() {
 	 * Add default posts and comments RSS feed links to head
 	 */
 	add_theme_support( 'automatic-feed-links' );
-	
+
 	/**
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
 	
 	/**
-	 * Set Post Thumbnail size
+	 * Register custom image sizes
 	 */
-	 add_image_size( 'featured-image', 1200, 9999 ); //1200 pixels wide (and unlimited height)
+	add_image_size( 'featured-thumbnail', 200, 150, true ); //200 pixels wide, 150 pixels tall, cropped
+	add_image_size( 'featured-big', 548, 9999 ); //737 pixels wide, unlimited height
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -74,22 +65,23 @@ function minimal_stream_setup() {
 	/**
 	 * Add support for the Aside Post Formats
 	 */
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'link', 'status' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'status', 'image' ) );
 }
 endif; // minimal_stream_setup
 add_action( 'after_setup_theme', 'minimal_stream_setup' );
 
 /**
- * Register widgetized area and update footer with default widgets
+ * Register widgetized area and update sidebar with default widgets
  *
  * @since Minimal Stream 1.0
  */
 function minimal_stream_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Footer', 'minimal_stream' ),
+		'name' => __( 'Search page widgets', 'minimal_stream' ),
 		'id' => 'sidebar-1',
+		'description' => 'Appears in the search page template. Recommended use is for links or custom menu widgets that list your favorite posts.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
@@ -100,21 +92,34 @@ add_action( 'widgets_init', 'minimal_stream_widgets_init' );
  * Enqueue scripts and styles
  */
 function minimal_stream_scripts() {
-	global $post;
-
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '20121252' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
+	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'minimal_stream_scripts' );
+
+/**
+ * Implement custom excerpt link
+ */
+function minimal_stream_excerpt_more( $more ) {
+	global $post;
+	return '... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue reading &rarr;</a>';
+}
+add_filter('excerpt_more', 'minimal_stream_excerpt_more');
+
+/**
+ * Implement custom excerpt length
+ */
+function minimal_stream_excerpt_length( $length ) {
+	return 45;
+}
+add_filter( 'excerpt_length', 'minimal_stream_excerpt_length', 999 );
 
 /**
  * Implement the Custom Header feature
