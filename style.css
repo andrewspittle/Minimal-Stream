@@ -371,7 +371,6 @@ header#masthead hgroup #site-title {
 	display: none; /* Remove if you want to add support for child menus */
 }
 .main-navigation li {
-	display: inline-block;
 	margin: 0.5em 7.6% 0.5em 0;
 }
 .main-navigation a {
