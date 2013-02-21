@@ -371,6 +371,7 @@ header#masthead hgroup #site-title {
 	display: none; /* Remove if you want to add support for child menus */
 }
 .main-navigation li {
+	display: block;
 	margin: 0.5em 7.6% 0.5em 0;
 }
 .main-navigation a {
@@ -875,6 +876,7 @@ ul.archive-list {
 
 #colophon {
 	border-top: 1px solid #f1f1f1;
+	clear: both;
 	font: 13px/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 1.3rem;
 	padding: 21px 0;
@@ -1045,8 +1047,7 @@ ul.archive-list {
 	#page {
 		padding: 0 20px;
 	}
-	#wrapper,
-	#colophon {
+	#wrapper {
 		width: 100%;
 		max-width: 840px;
 		min-width: 580px;
@@ -1055,8 +1056,7 @@ ul.archive-list {
 	header#masthead,
 	#primary,
 	.comment-author,
-	.comment-content,
-	#colophon .site-info {
+	.comment-content {
 		float: left;
 		margin-top: 1.3em;
 		margin-right: 3.8%;
@@ -1070,6 +1070,7 @@ ul.archive-list {
 		width: 65.4%;
 	}
 	#colophon .site-info {
+		clear: both;
 		float: left;
 		width: 100%;
 	}
@@ -1152,6 +1153,9 @@ ul.archive-list {
 		border-bottom: double #f1f1f1;
 		margin-bottom: 0;
 		padding: 7px 21px;
+	}
+	.main-navigation li {
+		display: inline-block;
 	}
 	/* Content */
 	#primary {
