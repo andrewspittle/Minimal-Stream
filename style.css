@@ -792,6 +792,12 @@ ul.archive-list {
 	font: 14px/1.65em Georgia, serif;
 	font-size: 1.4rem;
 	width: 100%;
+	-ms-word-break: break-all; 
+	word-break: break-all; 
+	word-break: break-word; 
+	-webkit-hyphens: auto; 
+	-moz-hyphens: auto; 
+	hyphens: auto;
 }
 .comment .reply {
 	font: 14px/1.5em Georgia, serif;
