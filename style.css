@@ -666,6 +666,8 @@ img.size-full {
 }
 img.attachment-featured-big {
 	margin-bottom: 1rem;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Make sure embeds and iframes fit their containers */
