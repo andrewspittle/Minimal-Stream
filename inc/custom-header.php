@@ -88,8 +88,6 @@ function minimal_stream_admin_header_style() {
 	#headimg img {
 		max-height: 75px;
 		max-width: 100%;
-		-webkit-border-radius: 50%; /* Saf3+, Chrome */
-		border-radius: 50%; /* Opera 10.5, IE 9 */
 	}
 	</style>
 <?php

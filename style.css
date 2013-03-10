@@ -348,9 +348,6 @@ a:active {
 header#masthead {
 	padding: 0 0 21px;
 }
-header#masthead hgroup #site-title {
-	margin: 0;
-}
 
 /* =Menu
 ----------------------------------------------- */
@@ -916,14 +913,29 @@ ul.archive-list {
 	}
 	header#masthead hgroup {
 		display: inline-block;
-		width: 65.4%;
+		width: 78%;
+	}
+	header#masthead hgroup a.home-link {
+		text-decoration: none;
+	}
+	header#masthead hgroup img {
+		display: inline-block;
+		margin: 10px 5% 15px 0;
+		max-width: 15%;
+		height: auto;
+		vertical-align: top;
+	}
+	header#masthead hgroup h1 {
+		clear: none;
+		display: inline-block;
+		margin-top: 15px;
+		width: 70%;
 	}
 	header#masthead hgroup h1 a {
 		color: #333;
 		display: block;
-		font: 16px/1.1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-		font-size: 1.8rem;
-		padding: 10px 0;
+		font: 22px/1.1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+		font-size: 2.2rem;
 		text-decoration: none;
 	}
 	header#masthead hgroup h1 a:hover,
@@ -940,7 +952,7 @@ ul.archive-list {
 		margin: 0;
 		text-align: right;
 		vertical-align: top;
-		width: 30.75%;
+		width: 20.75%;
 	}
 	nav.main-small-navigation .children {
 		display: none;
@@ -948,12 +960,13 @@ ul.archive-list {
 	nav.main-small-navigation .menu-toggle {
 		font: 14px/1.1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 		font-size: 1.4rem;
-		margin: 12px 20px 0;
+		margin: 20px 20px 0;
 	}
 	nav.main-small-navigation ul {
 		background-color: #fff;
-		margin: -5px 0 0 0;
+		margin: -5px 0 0 -30%;
 		padding: 10px 20px 10px 10px;
+		width: 100%;
 	}
 	nav.main-small-navigation li:last-of-type {
 		margin-bottom: 0;
@@ -1087,13 +1100,27 @@ ul.archive-list {
 		margin-top: 0;
 		padding-top: 0;
 	}
+	header#masthead hgroup a.home-link {
+		text-decoration: none;
+	}
+	header#masthead hgroup img {
+		display: inline-block;
+		margin: 10px 5% 15px 0;
+		max-width: 50px;
+		height: auto;
+		vertical-align: top;
+	}
+	header#masthead hgroup h1 {
+		clear: none;
+		display: inline-block;
+		margin-top: 22px;
+		width: inherit;
+	}
 	header#masthead hgroup h1 a {
-		border-bottom: double #f1f1f1;
 		color: #333;
 		display: block;
 		font: 22px/1.1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 		font-size: 2.2rem;
-		padding: 21px;
 		text-decoration: none;
 	}
 	header#masthead hgroup h1 a:hover,
@@ -1102,6 +1129,7 @@ ul.archive-list {
 		color: #ba2000;
 	}
 	header#masthead hgroup #site-description {
+		border-top: double #f1f1f1;
 		border-bottom: double #f1f1f1;
 		color: #989898;
 		font: 13px/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
@@ -1151,16 +1179,37 @@ ul.archive-list {
 		width: 100%;
 	}
 	/* Header */
+	header#masthead hgroup a.home-link {
+		text-decoration: none;
+	}
+	header#masthead hgroup img {
+		display: inline-block;
+		margin: 10px 3% 15px 0;
+		max-width: 50px;
+		height: auto;
+		vertical-align: top;
+	}
+	header#masthead hgroup h1 {
+		clear: none;
+		display: inline-block;
+		margin-top: 2px;
+		width: inherit;
+	}
 	header#masthead hgroup h1 a {
-		padding: 21px 0;
+		color: #333;
+		display: block;
+		font: 22px/1.1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+		font-size: 2.2rem;
+		text-decoration: none;
 	}
 	header#masthead hgroup #site-description {
 		display: none;
 	}
 	header nav.site-navigation {
+		border-top: double #f1f1f1;
 		border-bottom: double #f1f1f1;
 		margin-bottom: 0;
-		padding: 7px 21px;
+		padding: 21px 21px;
 	}
 	.main-navigation li {
 		display: inline-block;
