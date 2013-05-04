@@ -884,6 +884,7 @@ ul.archive-list {
 	clear: both;
 	font: 13px/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 1.3rem;
+	margin-bottom: 21px;
 	padding: 21px 0;
 }
 #colophon a {
