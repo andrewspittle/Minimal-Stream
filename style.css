@@ -99,6 +99,7 @@ input,
 select,
 textarea {
 	color: #101820;
+	font-size: 16px;
 	font: 1.6rem/1.5em Georgia, serif;
 	margin: 0;
 }
