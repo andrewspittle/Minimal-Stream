@@ -1070,9 +1070,7 @@ ul.archive-list {
 		padding: 0 20px;
 	}
 	#wrapper {
-		width: 100%;
-		max-width: 840px;
-		min-width: 580px;
+		width: 840px;
 		margin: 0 auto;
 	}
 	header#masthead,
@@ -1085,11 +1083,11 @@ ul.archive-list {
 		min-height: 1px;
 	}
 	header#masthead {
-		width: 30.75%;
+		width: 258px;
 	}
 	#primary {
 		margin-right: 0px;
-		width: 65.4%;
+		width: 550px;
 	}
 	#colophon .site-info {
 		clear: both;
