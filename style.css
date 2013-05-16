@@ -669,6 +669,12 @@ img.attachment-featured-big {
 	height: auto;
 }
 
+/* Align the WP.com stats smiley :) */
+#wpstats {
+	display: block;
+	margin: 0 auto 10px auto;
+}
+
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,

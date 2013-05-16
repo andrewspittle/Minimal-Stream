@@ -92,7 +92,7 @@ add_action( 'widgets_init', 'minimal_stream_widgets_init' );
  * Enqueue scripts and styles
  */
 function minimal_stream_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '20130505' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '20130515' );
 	
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
 
