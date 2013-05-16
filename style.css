@@ -582,7 +582,8 @@ footer.entry-meta {
 
 .site-navigation {
 	color: #989898;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.4rem;
 	margin: 0 0 42px;
 	overflow: hidden;
 }
