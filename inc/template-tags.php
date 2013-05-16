@@ -117,26 +117,36 @@ function minimal_stream_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for minimal_stream_comment()
 
-if ( ! function_exists( 'minimal_stream_posted_on' ) ) :
+if ( ! function_exists( 'minimal_stream_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time.
  *
  * @since Minimal Stream 1.0
  */
-function minimal_stream_posted_on() {
+function minimal_stream_meta() {
 	if ( !is_single() ) {
-		printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'minimal_stream' ),
+		printf( __( '<span class="entry-date">' ) );
+		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'minimal_stream' ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
+		printf( __( '</span>' ) );
+		printf( __( '<span class="entry-tags">' ) );
+		the_tags( '', ', ' );
+		printf( __( '</span>' ) );
 	}
 	else {
-		printf( __( 'Posted on <time class="entry-date" datetime="%1$s" pubdate>%2$s</time>', 'minimal_stream' ),
+		printf( __( '<span class="entry-date">' ) );
+		printf( __( '<time class="entry-date" datetime="%1$s" pubdate>%2$s</time>', 'minimal_stream' ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
+		printf( __( '</span>' ) );
+		printf( __( '<span class="entry-tags">' ) );
+		the_tags( '', ', ' );
+		printf( __( '</span>' ) );
 	}
 }
 endif;

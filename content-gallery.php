@@ -16,14 +16,8 @@
 	<header class="entry-header">
 		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<div class="entry-meta">
-				<p class="entry-date"><?php minimal_stream_posted_on(); ?></p>
-			</div><!-- .entry-meta -->
 		<?php else : ?>
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'minimalstream' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-			<div class="entry-meta">
-				<p class="entry-date"><?php minimal_stream_posted_on(); ?></p>
-			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -58,6 +52,12 @@
 	<?php //endif; ?>
 
 	<footer class="entry-meta">
+		<div class="post-meta">
+			<?php if ( 'post' == get_post_type() ) : ?>
+				<?php minimal_stream_meta(); ?>
+			<?php endif; ?>
+		</div>
+		
 		<?php edit_post_link( __( 'Edit', 'minimal_stream' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

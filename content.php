@@ -27,12 +27,6 @@
 		<?php else : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php endif; ?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php minimal_stream_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -51,6 +45,12 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
+		<div class="post-meta">
+			<?php if ( 'post' == get_post_type() ) : ?>
+				<?php minimal_stream_meta(); ?>
+			<?php endif; ?>
+		</div>
+		
 		<?php edit_post_link( __( 'Edit', 'minimal_stream' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

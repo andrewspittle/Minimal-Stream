@@ -436,10 +436,10 @@ header#masthead {
 .entry-title {
 	color: #333;
 	font-weight: bold;
-	margin: 0;
+	margin: 0 0 1.5rem 0;
 }
 .page .entry-title {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 }
 .entry-title a {
 	text-decoration: none;
@@ -449,18 +449,26 @@ header#masthead {
 	color: #989898;
 	font: 13px/1.5em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 1.3rem;
-	margin: 0.5rem 0 1.5rem 0;
+	margin: 0.5rem 0 0 0;
 }
 .entry-meta a {
-	border-bottom: 1px solid #e1e1e1;
 	color: #989898;
 	text-decoration: none;
 }
 .entry-meta a:hover,
 .entry-meta a:focus,
 .entry-meta a:active {
-	border-bottom-color: #989898;
+	border-bottom: 1px solid #e1e1e1;
 	color: #666;
+}
+footer.entry-meta .post-meta {
+	text-align: left;
+}
+.entry-meta .entry-tags {
+	padding-left: 5px;
+}
+.entry-meta .entry-tags a {
+	color: #cccccc;
 }
 footer.entry-meta {
 	text-align: right;
@@ -558,9 +566,8 @@ footer.entry-meta {
 /* =Statuses
 ----------------------------------------------- */
 
-.format-status div.entry-meta,
 .format-status .avatar-wrap {
-	display: inline-block;
+	float: left;
 	vertical-align: top;
 }
 .format-status .avatar-wrap {
