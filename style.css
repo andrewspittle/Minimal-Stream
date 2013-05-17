@@ -465,7 +465,9 @@ footer.entry-meta .post-meta {
 	text-align: left;
 }
 .entry-meta .entry-tags {
-	padding-left: 5px;
+	border-left: 1px solid #e1e1e1;
+	margin-left: 10px;
+	padding-left: 10px;
 }
 .entry-meta .entry-tags a {
 	color: #cccccc;
