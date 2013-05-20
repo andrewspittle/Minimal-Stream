@@ -8,6 +8,21 @@
  * @since Minimal Stream 1.0
  */
  
+if ( ! function_exists( 'minimal_stream_profile_pic' ) ) :
+/**
+ * Pull the custom profile picture we can set at Appearance > Theme Options.
+ *
+ * @since Minimal Stream 1.1
+ */
+function minimal_stream_profile_pic() {
+	$options = get_option( 'minimal_stream_options' );
+	$ms_profile_pic = $options[ 'profilepic' ];
+	?>
+	<img src="<?php echo $ms_profile_pic; ?>" class="profile-pic" />
+	<?php
+}
+endif; // minimal_stream_profile_pic
+ 
 if ( ! function_exists( 'minimal_stream_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable

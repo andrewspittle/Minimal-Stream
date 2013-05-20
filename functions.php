@@ -129,6 +129,11 @@ add_filter( 'excerpt_length', 'minimal_stream_excerpt_length', 999 );
 require( get_template_directory() . '/inc/custom-header.php' );
 
 /**
+ * Load up our awesome theme options
+ */
+require_once ( get_template_directory() . '/inc/theme-options.php' );
+
+/**
  * Remove URL field from the comment form
  */
 add_filter( 'comment_form_default_fields', 'minimal_stream_remove_url' );
