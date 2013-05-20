@@ -46,8 +46,11 @@
 	
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<?php minimal_stream_profile_pic(); ?>
-			
+			<?php if ( get_header_image() ) : ?>
+				<a class="home-link" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+				</a>
+			<?php endif; ?>
 			<h1 id="site-title">
 					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			</h1>
