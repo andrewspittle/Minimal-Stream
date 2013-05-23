@@ -1104,7 +1104,7 @@ ul.archive-list {
 		min-height: 1px;
 	}
 	header#masthead {
-		border-right: 5px solid #e1e1e1;
+		border-right: 5px solid #333;
 		position: fixed;
 		width: 400px;
 		height: 100%;
@@ -1143,7 +1143,7 @@ ul.archive-list {
 	header#masthead hgroup h1 {
 		background-color: rgba(0,0,0,0.7);
 		clear: none;
-		padding: 10px 5%;
+		padding: 15px 5%;
 	}
 	header#masthead hgroup h1 a {
 		color: #fff;
@@ -1155,25 +1155,19 @@ ul.archive-list {
 	header#masthead hgroup h1 a:hover,
 	header#masthead hgroup h1 a:focus,
 	header#masthead hgroup h1 a:active {
-		color: #ba2000;
+		color: #f1f1f1;
 	}
 	header#masthead hgroup #site-description {
 		display: none;
 	}
 	nav.main-navigation,
 	#masthead .site-navigation {
-		background-color: #666;
+		background-color: #f1f1f1;
 		margin: 0;
 		padding: 10px 21px 30px 21px;
 	}
 	nav.main-navigation a {
-		color: #f1f1f1;
-		text-decoration: none;
-	}
-	nav.main-navigation a:hover,
-	nav.main-navigation a:focus,
-	nav.main-navigation a:active {
-		color: #ba2000;
+		color: #333;
 	}
 	nav.main-navigation li {
 		display: inline-block;
@@ -1197,7 +1191,8 @@ ul.archive-list {
 	}
 	/* Footer */
 	#colophon {
-		margin-left: 34.55%;
+		margin-left: 500px;
+		width: 550px;
 	}
 }
 
