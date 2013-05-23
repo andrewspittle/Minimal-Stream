@@ -1213,8 +1213,10 @@ ul.archive-list {
 		width: 100%;
 	}
 	/* Header */
-	header#masthead {
+	#wrapper header#masthead {
+		background: none;
 		border: none;
+		padding-bottom: 21px;
 		position: relative;
 		width: 100%;
 		height: inherit;
@@ -1226,6 +1228,7 @@ ul.archive-list {
 		text-decoration: none;
 	}
 	header#masthead hgroup img {
+		display: none;
 		display: inline-block;
 		margin: 10px 3% 15px 0;
 		max-width: 50px;
@@ -1233,7 +1236,7 @@ ul.archive-list {
 		vertical-align: top;
 	}
 	header#masthead hgroup h1 {
-		background-color: none;
+		background: none;
 		clear: none;
 		display: inline-block;
 		padding: 0;
@@ -1247,17 +1250,22 @@ ul.archive-list {
 		font-size: 2.2rem;
 		text-decoration: none;
 	}
+	header#masthead hgroup h1 a:hover,
+	header#masthead hgroup h1 a:focus,
+	header#masthead hgroup h1 a:active {
+		color: #ba2000;
+	}
 	header#masthead hgroup #site-description {
 		display: none;
 	}
-	header nav.site-navigation {
-		background-color: none;
+	header#masthead nav.main-navigation {
+		background: none;
 		border-top: double #f1f1f1;
 		border-bottom: double #f1f1f1;
 		margin-bottom: 0;
-		padding: 21px 21px;
+		padding: 10px;
 	}
-	.main-navigation li {
+	nav.main-navigation li {
 		display: inline-block;
 	}
 	/* Content */
