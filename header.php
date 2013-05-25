@@ -45,22 +45,25 @@
 	<?php do_action( 'before' ); ?>
 	
 	<header id="masthead" class="site-header" role="banner">
-		<div class="header-wrap">
-			<hgroup>
-				<h1 id="site-title">
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</h1>
-				
-				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-			</hgroup>
-	
-			<nav role="navigation" class="site-navigation main-navigation">
-				<h1 class="assistive-text"><?php _e( 'Menu', 'minimal_stream' ); ?></h1>
-				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'minimal_stream' ); ?>"><?php _e( 'Skip to content', 'minimal_stream' ); ?></a></div>
-	
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- .site-navigation .main-navigation -->
-		</div>
+		<hgroup>
+			<?php if ( get_header_image() ) : ?>
+				<a class="home-link" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+				</a>
+			<?php endif; ?>
+			<h1 id="site-title">
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			</h1>
+			
+			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+		</hgroup>
+
+		<nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text"><?php _e( 'Menu', 'minimal_stream' ); ?></h1>
+			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'minimal_stream' ); ?>"><?php _e( 'Skip to content', 'minimal_stream' ); ?></a></div>
+
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- .site-navigation .main-navigation -->
 	</header><!-- #masthead .site-header -->
 	
 	<div id="main" class="site-main">
