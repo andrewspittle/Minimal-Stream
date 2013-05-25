@@ -1194,6 +1194,7 @@ ul.archive-list {
 		width: 90%;
 	}
 	/* Text posts */
+	article.page,
 	article.format-standard,
 	article.format-link,
 	article.format-aside,
