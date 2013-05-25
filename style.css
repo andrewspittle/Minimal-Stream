@@ -1185,8 +1185,10 @@ ul.archive-list {
 	/* Image and Gallery posts */
 	article.format-image,
 	article.format-gallery,
+	article.type-attachment,
 	.single-format-gallery #comments,
-	.single-format-image #comments {
+	.single-format-image #comments,
+	.single-attachment #comments {
 		max-width: 1200px;
 		min-width: 550px;
 		width: 90%;
