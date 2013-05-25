@@ -1102,7 +1102,6 @@ ul.archive-list {
 	#primary {
 		display: block;
 		margin: 21px 0 0 450px;
-		width: 550px;
 	}
 	#colophon .site-info {
 		clear: both;
@@ -1180,6 +1179,29 @@ ul.archive-list {
 		font: bold 20px/1.1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 		font-size: 2.0rem;
 	}
+	#primary #nav-below {
+		width: 550px;
+	}
+	/* Image and Gallery posts */
+	article.format-image,
+	article.format-gallery,
+	.single-format-gallery #comments,
+	.single-format-image #comments {
+		max-width: 1200px;
+		min-width: 550px;
+		width: 90%;
+	}
+	/* Text posts */
+	article.format-standard,
+	article.format-link,
+	article.format-aside,
+	article.format-status,
+	.single-format-standard #comments,
+	.single-format-link #comments,
+	.single-format-aside #comments,
+	.single-format-status #comments {
+		width: 550px;
+	}
 	/* Comments */
 	article.comment {
 		width: 100%;
@@ -1194,7 +1216,8 @@ ul.archive-list {
 	}
 	/* Footer */
 	#colophon {
-		margin-left: 34.55%;
+		margin-left: 450px;
+		width: 550px;
 	}
 }
 
