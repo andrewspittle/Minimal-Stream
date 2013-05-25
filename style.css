@@ -1196,6 +1196,17 @@ ul.archive-list {
 	}
 }
 
+/* =Medium window layout
+------------------------------------------------ */
+@media screen and (max-width: 1150px) {
+	header#masthead {
+		width: 20%;
+	}
+	#primary {
+		margin-left: 30%;
+	}
+}
+
 /* =Tablet (portrait)
 ------------------------------------------------ */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
@@ -1213,15 +1224,6 @@ ul.archive-list {
 		width: 100%;
 	}
 	/* Header */
-	header#masthead {
-		border: none;
-		position: relative;
-		width: 100%;
-		height: inherit;
-	}
-	header#masthead .header-wrap {
-		position: relative;
-	}
 	header#masthead hgroup a.home-link {
 		text-decoration: none;
 	}
@@ -1233,10 +1235,8 @@ ul.archive-list {
 		vertical-align: top;
 	}
 	header#masthead hgroup h1 {
-		background-color: none;
 		clear: none;
 		display: inline-block;
-		padding: 0;
 		margin-top: 2px;
 		width: inherit;
 	}
@@ -1251,7 +1251,6 @@ ul.archive-list {
 		display: none;
 	}
 	header nav.site-navigation {
-		background-color: none;
 		border-top: double #f1f1f1;
 		border-bottom: double #f1f1f1;
 		margin-bottom: 0;
