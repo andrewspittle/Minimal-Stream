@@ -482,6 +482,7 @@ footer.entry-meta .post-meta {
 	vertical-align: text-bottom;
 }
 .entry-meta .entry-tags:before {
+	color: #cccccc;
 	content: '\f302';
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
