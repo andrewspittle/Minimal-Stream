@@ -126,27 +126,31 @@ if ( ! function_exists( 'minimal_stream_meta' ) ) :
 function minimal_stream_meta() {
 	if ( !is_single() ) {
 		printf( __( '<span class="entry-date">' ) );
-		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'minimal_stream' ),
+		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-time" datetime="%3$s" pubdate>%4$s</time></a>', 'minimal_stream' ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
 		printf( __( '</span>' ) );
-		printf( __( '<span class="entry-tags">' ) );
-		the_tags( '', ', ' );
-		printf( __( '</span>' ) );
+		if ( has_tag() ) {
+			printf( __( '<span class="entry-tags">' ) );
+			the_tags( '', ', ' );
+			printf( __( '</span>' ) );
+		}
 	}
 	else {
 		printf( __( '<span class="entry-date">' ) );
-		printf( __( '<time class="entry-date" datetime="%1$s" pubdate>%2$s</time>', 'minimal_stream' ),
+		printf( __( '<time class="entry-time" datetime="%1$s" pubdate>%2$s</time>', 'minimal_stream' ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
 		printf( __( '</span>' ) );
-		printf( __( '<span class="entry-tags">' ) );
-		the_tags( '', ', ' );
-		printf( __( '</span>' ) );
+		if ( has_tag() ) {
+			printf( __( '<span class="entry-tags">' ) );
+			the_tags( '', ', ' );
+			printf( __( '</span>' ) );
+		}
 	}
 }
 endif;
