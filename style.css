@@ -601,6 +601,9 @@ footer.entry-meta {
 .format-status .avatar-wrap {
 	margin-right: 3.8%;
 }
+.format-status div.entry-content {
+	padding-left: 76px;
+}
 .format-status div.entry-meta p {
 	margin-bottom: 0.5rem;
 }
