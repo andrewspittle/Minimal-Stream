@@ -1085,6 +1085,7 @@ ul.archive-list {
 	/* Layout */
 	#page {
 		padding: 0;
+		min-width: 834px;
 	}
 	#wrapper {
 		width: 100%;
@@ -1101,7 +1102,9 @@ ul.archive-list {
 	}
 	#primary {
 		display: block;
-		margin: 21px 0 0 450px;
+		margin: 21px 0 0 30%;
+		width: 65%;
+		min-width: 542px;
 	}
 	#colophon .site-info {
 		clear: both;
@@ -1116,7 +1119,8 @@ ul.archive-list {
 		margin-top: 0;
 		padding: 0;
 		position: fixed;
-		width: 350px;
+		width: 25%;
+		min-width: 208px;
 	}
 	header#masthead hgroup {
 		position: absolute;
@@ -1170,6 +1174,7 @@ ul.archive-list {
 	.main-navigation li {
 		display: inline-block;
 		margin: 0 10px 0 0;
+		line-height: 1.5em;
 	}
 	.main-navigation li a {
 		color: #333;
@@ -1191,7 +1196,7 @@ ul.archive-list {
 	.single-attachment #comments {
 		max-width: 1200px;
 		min-width: 550px;
-		width: 90%;
+		width: 100%;
 	}
 	/* Text posts */
 	article.page,
@@ -1219,7 +1224,7 @@ ul.archive-list {
 	}
 	/* Footer */
 	#colophon {
-		margin-left: 450px;
+		margin-left: 30%;
 		width: 550px;
 	}
 }
