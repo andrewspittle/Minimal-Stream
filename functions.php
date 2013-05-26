@@ -53,7 +53,7 @@ function minimal_stream_setup() {
 	 * Register custom image sizes
 	 */
 	add_image_size( 'featured-thumbnail', 183, 100, true ); //200 pixels wide, 150 pixels tall, cropped
-	add_image_size( 'featured-big', 550, 9999 ); //737 pixels wide, unlimited height
+	add_image_size( 'featured-big', 1200, 9999 ); //737 pixels wide, unlimited height
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
