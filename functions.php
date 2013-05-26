@@ -65,7 +65,7 @@ function minimal_stream_setup() {
 	/**
 	 * Add support for the Aside Post Formats
 	 */
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'status', 'image' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'status', 'image', 'quote' ) );
 }
 endif; // minimal_stream_setup
 add_action( 'after_setup_theme', 'minimal_stream_setup' );

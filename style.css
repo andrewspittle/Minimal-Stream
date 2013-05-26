@@ -541,8 +541,6 @@ footer.entry-meta {
 /* Footnotes */
 .simple-footnotes,
 .footnotes {
-	border-bottom: 1px solid #f1f1f1;
-	border-top: 1px solid #f1f1f1;
 	color: #666;
 	font: 13px/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.3rem;
@@ -1245,10 +1243,12 @@ ul.archive-list {
 	article.format-link,
 	article.format-aside,
 	article.format-status,
+	article.format-quote,
 	.single-format-standard #comments,
 	.single-format-link #comments,
 	.single-format-aside #comments,
-	.single-format-status #comments {
+	.single-format-status #comments,
+	.single-format-quote #comments {
 		width: 550px;
 	}
 	/* Comments */
