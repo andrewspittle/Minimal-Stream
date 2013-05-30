@@ -12,7 +12,7 @@
  * @since Minimal Stream 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 550; /* pixels */
+	$content_width = 1200; /* pixels */
 
 if ( ! function_exists( 'minimal_stream_setup' ) ) :
 /**
