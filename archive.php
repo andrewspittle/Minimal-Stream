@@ -15,8 +15,8 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<header class="page-header">
-					<h1 class="page-title">
+				<header class="archive-header">
+					<h1 class="archive-title">
 						<?php
 							if ( is_category() ) {
 								printf( __( 'Category Archives: %s', 'minimal_stream' ), '<span>' . single_cat_title( '', false ) . '</span>' );
