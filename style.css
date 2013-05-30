@@ -1197,26 +1197,25 @@ ul.archive-list {
 	}
 	header nav.main-navigation {
 		background-color: #e1e1e1;
-		padding: 10px 21px;
+		padding: 5px 21px;
 		position: relative;
 		text-align: center;
 	}
 	.main-navigation li {
 		display: inline-block;
-		margin: 0;
+		margin: 5px 0;
 	}
 	.main-navigation li a {
 		color: #333;
 		line-height: 1.5em;
-		margin: 0;
-		padding: 1em 10px;
+		margin: 0 10px;
+		padding: 0;
 	}
 	.main-navigation li a:hover,
 	.main-navigation li a:focus,
 	.main-navigation li a:active,
 	.main-navigation li.current_page_item a,
 	.main-navigation li.current-menu-item a {
-		background-color: #f1f1f1;
 	}
 	/* Content */
 	.entry-title {
