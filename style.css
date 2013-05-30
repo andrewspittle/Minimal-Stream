@@ -552,12 +552,13 @@ footer.entry-meta {
 }
 
 /* Archives header */
-.page-header {
+.archive-header {
 	border-bottom: double #f1f1f1;
 	margin-bottom: 1.5em;
-	padding-bottom: 0.5em;
 }
-.page-title {
+.archive-title {
+	color: #666;
+	font: bold 16px/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-bottom: 1.5em;
 }
 .taxonomy-description {
