@@ -1237,6 +1237,16 @@ ul.archive-list {
 		min-width: 550px;
 		width: 100%;
 	}
+	.archive.term-post-format-image article.format-image {
+		border: none;
+		display: inline-block;
+		margin: 0 2.5% 42px 2.5%;
+		max-width: 540px;
+		min-width: 250px;
+		padding: 0;
+		width: 44%;
+		vertical-align: top;
+	}
 	/* Text posts */
 	article.page,
 	article.format-standard,
